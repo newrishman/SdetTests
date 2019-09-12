@@ -12,21 +12,17 @@ public class FirstTests extends Config {
     @Test
     public void start() {
         Chat chat = new Chat();
-        String nickName = "My name";
-        String message = "something message";
-
-        chat.open();
-        chat.addNickName(nickName);
-        chat.enter(".submit");
-
+        chat.open()
+                .addNickName()
+                .enterInChat()
+                .click();
         $(".primary").shouldBe(Condition.visible);
-        $("#messageArea").shouldHave(Condition.exactText(nickName + " joined!"));
+        $("#messageArea > li:nth-child(1) > p").shouldHave(Condition.exactText(chat.getNickName() + " joined!"));
 
-        chat.writeMessage(message);
-        chat.enter(".primary");
-        $("#messageArea").shouldHave(Condition.exactText(
-                nickName + " joined!\n" + nickName + "\n" + message
-                )
+        chat.writeMessage()
+                .sendMessage()
+                .click();
+        $("#messageArea > li.chat-message > p").shouldHave(Condition.exactText(chat.getMessage())
         );
     }
 }

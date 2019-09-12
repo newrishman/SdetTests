@@ -1,0 +1,46 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+    <link rel="stylesheet" href="/css/main.css">
+    <title>SimbirSoft чат</title>
+</head>
+<body>
+<div id="username-page" class="hidden">
+    <div class="username-page-container">
+        <h2 class="title" style="color:#102d86">Введите имя</h2>
+        <form id="usernameForm" name="usernameForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="логин" autocomplete="off" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="submit">Войти в чат</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="chat-page" class="">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Чат</h1>
+        </div>
+        <ul id="messageArea">
+        <li class="event-message"><p>My name joined!</p></li><li class="chat-message"><span>My name</span><p>something message</p></li></ul>
+        <form id="messageForm" name="messageForm">
+            <div class="form-group">
+                <div class="input-group clearfix">
+                    <input type="text" id="message" placeholder="введите сообщение" autocomplete="off" class="form-control">
+                    <button type="submit" class="primary">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body></html>
