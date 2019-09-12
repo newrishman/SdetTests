@@ -13,12 +13,11 @@ public class Chat {
         $("#name").setValue(name);
     }
 
-    public void enter() {
-        $(".submit").click();
+    public void enter(String button) {
+        $(button).click();
     }
 
     public void writeMessage(String message) {
         $("#message").setValue(message);
-        $(".primary").click();
     }
 }

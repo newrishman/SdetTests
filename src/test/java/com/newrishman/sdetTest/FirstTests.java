@@ -17,16 +17,16 @@ public class FirstTests extends Config {
 
         chat.open();
         chat.addNickName(nickName);
-        chat.enter();
+        chat.enter(".submit");
 
         $(".primary").shouldBe(Condition.visible);
         $("#messageArea").shouldHave(Condition.exactText(nickName + " joined!"));
 
         chat.writeMessage(message);
+        chat.enter(".primary");
         $("#messageArea").shouldHave(Condition.exactText(
                 nickName + " joined!\n" + nickName + "\n" + message
                 )
         );
-
     }
 }
