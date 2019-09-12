@@ -17,12 +17,15 @@ public class FirstTests extends Config {
                 .enterInChat()
                 .click();
         $(".primary").shouldBe(Condition.visible);
-        $("#messageArea > li:nth-child(1) > p").shouldHave(Condition.exactText(chat.getNickName() + " joined!"));
+
+        $("#messageArea > li:nth-child(1) > p")
+                .shouldHave(Condition.exactText(chat.getNickName() + " joined!"));
 
         chat.writeMessage()
                 .sendMessage()
                 .click();
-        $("#messageArea > li.chat-message > p").shouldHave(Condition.exactText(chat.getMessage())
-        );
+        $("#messageArea > li.chat-message > p")
+                .shouldHave(Condition.exactText(chat.getMessage())
+                );
     }
 }
