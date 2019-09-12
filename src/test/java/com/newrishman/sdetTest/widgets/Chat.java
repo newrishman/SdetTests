@@ -35,6 +35,17 @@ public class Chat {
         return $(sendButton);
     }
 
+    public SelenideElement enterInterface() {
+        return $(".primary");
+    }
+
+    public SelenideElement joinMessage() {
+        return $("#messageArea > li:nth-child(1) > p");
+    }
+
+    public SelenideElement userMessage() {
+        return $("#messageArea > li.chat-message > p");
+    }
 
     public String getNickName() {
         return nickName;
@@ -43,6 +54,4 @@ public class Chat {
     public String getMessage() {
         return message;
     }
-
-
 }
