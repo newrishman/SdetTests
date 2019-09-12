@@ -25,7 +25,6 @@ public class FirstTests extends Config {
                 .sendMessage()
                 .click();
         $("#messageArea > li.chat-message > p")
-                .shouldHave(Condition.exactText(chat.getMessage())
-                );
+                .shouldHave(Condition.exactText(chat.getMessage()));
     }
 }
