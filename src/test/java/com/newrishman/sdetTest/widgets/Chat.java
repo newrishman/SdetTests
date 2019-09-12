@@ -25,12 +25,12 @@ public class Chat {
         return this;
     }
 
-    public SelenideElement enterInChat() {
+    public SelenideElement enterInChatButton() {
         String enterButton = ".submit";
         return $(enterButton);
     }
 
-    public SelenideElement sendMessage() {
+    public SelenideElement sendMessageButton() {
         String sendButton = ".primary";
         return $(sendButton);
     }

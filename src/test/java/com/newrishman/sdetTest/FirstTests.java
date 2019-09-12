@@ -5,8 +5,6 @@ import com.newrishman.sdetTest.testConfig.Config;
 import com.newrishman.sdetTest.widgets.Chat;
 import org.junit.Test;
 
-import static com.codeborne.selenide.Selenide.$;
-
 public class FirstTests extends Config {
 
     @Test
@@ -14,16 +12,14 @@ public class FirstTests extends Config {
         Chat chat = new Chat();
         chat.open()
                 .addNickName()
-                .enterInChat()
-                .click();
+                .enterInChatButton().click();
 
         chat.enterInterface().shouldBe(Condition.visible);
         chat.joinMessage().shouldHave(
                 Condition.exactText(chat.getNickName() + " joined!"));
 
         chat.writeMessage()
-                .sendMessage()
-                .click();
+                .sendMessageButton().click();
 
         chat.userMessage().shouldHave(
                 Condition.exactText(chat.getMessage()));
