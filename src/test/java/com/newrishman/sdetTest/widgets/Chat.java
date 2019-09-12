@@ -9,15 +9,16 @@ public class Chat {
         Selenide.open("/");
     }
 
+    // Можно из следующих двух методов сделать один, но стоит ли? Имея два метода с разными именами,
+    //будет проще читать код сторонним людям. Иль ошибаюсь я?
     public void addNickName(String name) {
         $("#name").setValue(name);
+    }
+    public void writeMessage(String message) {
+        $("#message").setValue(message);
     }
 
     public void enter(String button) {
         $(button).click();
-    }
-
-    public void writeMessage(String message) {
-        $("#message").setValue(message);
     }
 }
